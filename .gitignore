@@ -1,1 +1,5 @@
 .DS_Store
+JDK14Test.iml
+src/main/java/datastructures/stack/
+target/
+.idea/
