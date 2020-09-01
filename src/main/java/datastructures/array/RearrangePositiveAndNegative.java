@@ -10,6 +10,9 @@ public class RearrangePositiveAndNegative {
 
     public static int[] execute(int[] arr) {
         int n = arr.length, i = -1, temp;
+        /**
+         * 先模仿快速排序把小于0的数都放在数组的前部
+         */
         for (int j = 0; j < n; j++) {
             if (arr[j] < 0) {
                 i++;
@@ -19,6 +22,10 @@ public class RearrangePositiveAndNegative {
             }
         }
         int positive = i + 1, negative = 0;
+        /**
+         * 1.替换第一个负数和第一个正数的位置
+         * 2.跳过一个负数再进行替换，以此类推。完成间隔替换，当数组为正数的时候，退出循环
+         */
         while (positive < n && negative < n && arr[negative] < 0) {
             temp = arr[negative];
             arr[negative] = arr[positive];
